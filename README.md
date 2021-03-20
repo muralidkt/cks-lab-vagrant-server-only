@@ -71,42 +71,6 @@ ECDSA key fingerprint is SHA256:JFKKm9BZz0YOUhyeyhBaFX3Ibbc6kuDW28K/5KGpSgs.
   Processes:    152               IP address for weave:   10.32.0.1
 
 ````
-List the nodes in the kubernestes cluster
-````
-student@master-01:~$ kubectl get node
-
-NAME        STATUS   ROLES                  AGE    VERSION
-master-01   Ready    control-plane,master   3m4s   v1.20.2
-worker-01   Ready    <none>                 79s    v1.20.2
-````
-List the pods in the kube-system namespace
-````
-student@master-01:~$ kubectl get pod -n kube-system
-NAME                                READY   STATUS    RESTARTS   AGE
-coredns-74ff55c5b-dc8gd             1/1     Running   0          3m1s
-coredns-74ff55c5b-gnvtj             1/1     Running   0          3m1s
-etcd-master-01                      1/1     Running   0          3m15s
-kube-apiserver-master-01            1/1     Running   0          3m15s
-kube-controller-manager-master-01   1/1     Running   0          3m15s
-kube-proxy-srrzg                    1/1     Running   0          94s
-kube-proxy-wckhh                    1/1     Running   0          3m1s
-kube-scheduler-master-01            1/1     Running   0          3m15s
-weave-net-jwj2c                     2/2     Running   1          94s
-weave-net-nbn2r                     2/2     Running   1          3m1s
-````
-Run your first pod
-````
-student@master-01:~$ kubectl run nginx --image=nginx
-pod/nginx created
-
-````
-Check if the nginx pod status
-````
-student@master-01:~$ kubectl get pod nginx 
-NAME    READY   STATUS    RESTARTS   AGE
-nginx   1/1     Running   0          42s
-````
-
 Suspend the cluster
 ````
 murali@ckslab $ vagrant suspend
